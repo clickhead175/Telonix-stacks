@@ -1,0 +1,22 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "client/dist",
+  "rewrites": [
+    {
+      "source": "/api",
+      "destination": "/api/express?__api_path="
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "/api/express?__api_path=:path*"
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/projects/:path*",
+      "destination": "/index.html"
+    }
+  ]
+}
